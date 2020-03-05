@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/por"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/po"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.5"
+            android:text="載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/imr" android:visibility="gone">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                fresco:viewAspectRatio="1.7"
+                android:id="@+id/image" android:layout_weight="70"
+                app:placeholderImage="@mipmap/field" app:placeholderImageScaleType="fitCenter"
+                android:background="#EFEFF4"/>
+    </RelativeLayout>
+
+    <com.orange.jzchi.jzframework.Widget.AspetRelate
+        android:id="@+id/youtube"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:ratio="1.7">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/vdim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="70"
+            android:background="#EFEFF4"
+            fresco:placeholderImageScaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="50dp"
+            fresco:srcCompat="@mipmap/hiclipart" />
+    </com.orange.jzchi.jzframework.Widget.AspetRelate>
+</RelativeLayout>
