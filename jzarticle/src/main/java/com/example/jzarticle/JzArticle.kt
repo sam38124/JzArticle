@@ -27,7 +27,7 @@ class JzArticle(val title:String,val post:String,val click:click) :Fragment(){
         type.add("po")
         po.add(title)
         for (s in Util_Tool.url(allpo)) {
-            if(s.contains("jpg")||s.contains("png")){
+            if(s.contains("jpg")||s.contains("png")||s.contains("firebase")){
                 type.add("po")
                 po.add(allpo.substring(0,allpo.indexOf(s)))
                 allpo=allpo.substring(allpo.indexOf(s)+s.length)

@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.marginTop
 import androidx.recyclerview.widget.RecyclerView
-import com.orange.jzchi.jzframework.JzActivity
-import com.orange.jzchi.jzframework.JzAdapter
 import com.orange.jzchi.jzframework.tool.UnicodeUtil.unicodeToString
 import kotlinx.android.synthetic.main.show_po.view.*
 

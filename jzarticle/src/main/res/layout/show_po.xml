@@ -22,17 +22,23 @@
             android:text="載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中"
             android:textColor="@android:color/black" />
     </RelativeLayout>
+
     <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/imr" android:visibility="gone">
+        android:id="@+id/imr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
 
         <com.facebook.drawee.view.SimpleDraweeView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                fresco:viewAspectRatio="1.7"
-                android:id="@+id/image" android:layout_weight="70"
-                app:placeholderImage="@mipmap/field" app:placeholderImageScaleType="fitCenter"
-                android:background="#EFEFF4"/>
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:background="#EFEFF4"
+            android:adjustViewBounds="true"
+            app:placeholderImage="@mipmap/field"
+            app:placeholderImageScaleType="fitCenter"
+             />
     </RelativeLayout>
 
     <com.orange.jzchi.jzframework.Widget.AspetRelate
