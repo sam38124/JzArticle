@@ -14,6 +14,7 @@ import com.facebook.drawee.backends.pipeline.Fresco
 import kotlinx.android.synthetic.main.fragment_show_po.view.*
 
 class JzArticle(val title: String, val post: String, val click: click) : Fragment() {
+    var scrollLinster: RecyclerView.OnScrollListener?=null
     var type = ArrayList<String>()
     var po = ArrayList<String>()
     var adapter = Ad_PostReader(type, po, click)
@@ -21,6 +22,9 @@ class JzArticle(val title: String, val post: String, val click: click) : Fragmen
     fun viewInit() {
         Fresco.initialize(activity!!.applicationContext)
         re = rootview.re
+        if(scrollLinster!=null){
+            rootview.re.addOnScrollListener(scrollLinster!!)
+        }
         rootview.re.layoutManager = LinearLayoutManager(activity)
         rootview.re.adapter = adapter
         var allpo = post
