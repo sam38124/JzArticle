@@ -9,43 +9,46 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.facebook.drawee.backends.pipeline.Fresco
 import kotlinx.android.synthetic.main.fragment_show_po.view.*
 
-class JzArticle(val title:String,val post:String,val click:click) :Fragment(){
-    var type=ArrayList<String>()
-    var po=ArrayList<String>()
-    var adapter=Ad_PostReader(type,po,click)
-
-     fun viewInit() {
-         Fresco.initialize(activity!!.applicationContext)
-        rootview.re.layoutManager= LinearLayoutManager(activity)
-         rootview.re.adapter=adapter
-        var allpo=post
+class JzArticle(val title: String, val post: String, val click: click) : Fragment() {
+    var type = ArrayList<String>()
+    var po = ArrayList<String>()
+    var adapter = Ad_PostReader(type, po, click)
+    lateinit var re: RecyclerView
+    fun viewInit() {
+        Fresco.initialize(activity!!.applicationContext)
+        re = rootview.re
+        rootview.re.layoutManager = LinearLayoutManager(activity)
+        rootview.re.adapter = adapter
+        var allpo = post
         po.clear()
         type.clear()
         type.add("po")
         po.add(title)
         for (s in Util_Tool.url(allpo)) {
-            if(s.contains("jpg")||s.contains("png")||s.contains("firebase")){
+            if (s.contains("jpg") || s.contains("png") || s.contains("firebase")) {
                 type.add("po")
-                po.add(allpo.substring(0,allpo.indexOf(s)))
-                allpo=allpo.substring(allpo.indexOf(s)+s.length)
+                po.add(allpo.substring(0, allpo.indexOf(s)))
+                allpo = allpo.substring(allpo.indexOf(s) + s.length)
                 type.add("image")
                 po.add(s)
             }
-            if(s.contains("https://youtu.be/")||s.contains("https://www.youtube.com/")){
+            if (s.contains("https://youtu.be/") || s.contains("https://www.youtube.com/")) {
                 type.add("po")
-                po.add(allpo.substring(0,allpo.indexOf(s)))
-                allpo=allpo.substring(allpo.indexOf(s)+s.length)
+                po.add(allpo.substring(0, allpo.indexOf(s)))
+                allpo = allpo.substring(allpo.indexOf(s) + s.length)
                 type.add("video")
                 po.add(s)
             }
         }
-         type.add("po")
-         po.add(allpo)
+        type.add("po")
+        po.add(allpo)
         adapter.notifyDataSetChanged()
     }
+
     var refresh = false
     lateinit var rootview: View
     var handler = Handler()
