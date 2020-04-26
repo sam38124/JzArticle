@@ -17,6 +17,7 @@ public class Util_Tool {
         return a.replace(b, c);
     }
 public static long TimeToStmp(String time){
+
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 指定时间格式
     Date setTime = null; // 指定时间
     try {
@@ -128,5 +129,6 @@ public static long TimeToStmp(String time){
     public static void checkPermissiom(Activity context){
 
     }
+
 
 }

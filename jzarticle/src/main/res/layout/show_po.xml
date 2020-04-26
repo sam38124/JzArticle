@@ -20,7 +20,8 @@
             android:layout_height="wrap_content"
             android:lineSpacingMultiplier="1.5"
             android:text="載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中載入中"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textIsSelectable="true" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -33,11 +34,10 @@
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#EFEFF4"
             android:adjustViewBounds="true"
             app:placeholderImage="@mipmap/field"
             app:placeholderImageScaleType="fitCenter"
-             />
+            fresco:actualImageScaleType="centerInside" />
     </RelativeLayout>
 
     <com.orange.jzchi.jzframework.Widget.AspetRelate
